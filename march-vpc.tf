@@ -4,6 +4,10 @@ provider "aws" {
 
 resource "aws_vpc" "March" {
     cidr_block = "10.0.0.0/16"
-    availability_zone = "eu-west-2b"
-  
-}
+    enable_dns_hostnames = true
+
+    tags = {
+      name = March
+      Environment = Test
+    }
+  }
